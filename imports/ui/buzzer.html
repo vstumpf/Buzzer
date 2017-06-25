@@ -1,0 +1,27 @@
+<body>
+  <div class="container">
+    <header>
+      <h1>Quizz Buzzer App ({{incompleteCount}})</h1>
+
+      <label class="hide-completed">
+        <input type="checkbox" />
+        Hide Completed Rooms
+      </label>
+
+      {{> loginButtons}}
+      
+      {{#if currentUser}}
+        <form class="new-room">
+          <input type="text" name="name" placeholder="Type to add new room" />
+        </form>
+      {{/if}}
+    </header>
+
+    <ul>
+      {{#each rooms}}
+        {{> room}}
+      {{/each}}
+    </ul>
+  </div>
+</body>
+
